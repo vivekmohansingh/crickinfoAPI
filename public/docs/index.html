@@ -1,0 +1,170 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Crickinfo API",
+        "contact": {
+            "name": "Crickinfo Team",
+            "email": "vivekvivek001111@gmail.com"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/api/team": {
+            "get": {
+                "tags": [
+                    "Team Operations"
+                ],
+                "summary": "API for get team info ",
+                "operationId": "/td",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "An Authorization header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns available teams list."
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad request."
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/team/{team_ID}": {
+            "get": {
+                "tags": [
+                    "Player Operations"
+                ],
+                "summary": "API for fetch team palyers list",
+                "operationId": "/tp",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "An Authorization header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "team_ID",
+                        "in": "path",
+                        "description": "Refer team ID from get team info",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns team's players list."
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad request."
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        },
+        "/api/player/{player_ID}/history": {
+            "get": {
+                "tags": [
+                    "Player Operations"
+                ],
+                "summary": "API for fetch team palyers summary",
+                "operationId": "/tp",
+                "parameters": [
+                    {
+                        "name": "access_token",
+                        "in": "header",
+                        "description": "An Authorization header",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "player_ID",
+                        "in": "path",
+                        "description": "Refer player ID from get player info",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns player's summary."
+                    },
+                    "204": {
+                        "description": "No Content"
+                    },
+                    "400": {
+                        "description": "Bad request."
+                    },
+                    "401": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Not found"
+                    },
+                    "405": {
+                        "description": "Method not allowed"
+                    },
+                    "422": {
+                        "description": "Unprocessable Entity"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
+    }
+}
